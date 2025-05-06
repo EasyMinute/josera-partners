@@ -34,27 +34,28 @@
 					<span class="burger__line"></span>
 					<span class="burger__line"></span>
 				</div>
-				<img class="header__logo" width="260" height="60" src="<?php echo esc_url(get_field('logo', 'option')['url']) ?>" alt="<?php echo esc_attr(get_field('logo', 'option')['alt']) ?>">
+
 				<?php if(have_rows('main_menu', 'option')){?>
 					<nav class="header__nav">
 						<?php while (have_rows('main_menu', 'option')) { the_row() ?>
 							<a class="header__nav__link" href="<?php echo get_sub_field('link')['url'] ?>">
-								<img src="<?php echo esc_url(get_sub_field('icon')['url']) ?>" alt="<?php echo esc_attr(get_sub_field('icon')['alt']) ?>" width="<?php echo esc_attr(get_sub_field('icon')['width']) ?>" height="<?php echo esc_attr(get_sub_field('icon')['height']) ?>">
 								<span><?php echo get_sub_field('link')['title'] ?></span>
 							</a>
-						<?php } ?>	
-						<button class="close-nav-mobile">
-							<span class="close-line"></span>
-							<span class="close-line"></span>
-						</button>
+						<?php } ?>
+                        <div class="divider"></div>
+                        <a href="https://josera.ua/ua/customer/account/login/" class="red-button">
+                            <?php echo __('Увійти', 'proacto') ?>
+                        </a>
 					</nav>
 				<?php } ?>
+
+                <img class="header__logo" width="260" height="60" src="<?php echo esc_url(get_field('logo', 'option')['url']) ?>" alt="<?php echo esc_attr(get_field('logo', 'option')['alt']) ?>">
+
 				<?php if(have_rows('add_menu', 'option')){?>
 					<nav class="header__tools">
 						<?php while (have_rows('add_menu', 'option')) { the_row() ?>
 							<a class="header__tools__link" href="<?php echo get_sub_field('link')['url'] ?>">
 								<img src="<?php echo esc_url(get_sub_field('icon')['url']) ?>" alt="<?php echo esc_attr(get_sub_field('icon')['alt']) ?>" width="<?php echo esc_attr(get_sub_field('icon')['width']) ?>" height="<?php echo esc_attr(get_sub_field('icon')['height']) ?>">
-								<span><?php echo get_sub_field('link')['title'] ?></span>
 							</a>
 						<?php } ?>	
 					</nav>
@@ -64,13 +65,15 @@
 		<?php if (have_rows('offers', 'option')) { ?>
 		<div class="promo-row">
 			<div class="container">
-				<div class="promo-row__wrap">
-					<?php while (have_rows('offers', 'option')) { the_row() ?>
-						<span class="promo-row__text">
-							<?php the_sub_field('text', 'option') ?>
-						</span>
-					<?php } ?>
-				</div>
+                <div class="promo-row__wrap owl-carousel">
+					<?php while (have_rows('offers', 'option')) : the_row(); ?>
+                        <div class="promo-row__item">
+                            <span class="promo-row__text">
+                                <?php the_sub_field('text', 'option'); ?>
+                            </span>
+                        </div>
+					<?php endwhile; ?>
+                </div>
 			</div>
 		</div>
 		<?php } ?>

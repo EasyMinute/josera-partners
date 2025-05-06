@@ -6,6 +6,10 @@
 
 		wp_style_add_data( 'proacto-style', 'rtl', 'replace' );
 
+		wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/assets/OwlCarousel2/dist/assets/owl.carousel.css');
+		wp_enqueue_style('owl-theme', get_template_directory_uri() . '/assets/OwlCarousel2/dist/assets/owl.theme.default.css');
+
+
 
 
 		wp_enqueue_style( 'proacto-awesome-style', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', array(), _S_VERSION );
@@ -15,6 +19,7 @@
 		wp_enqueue_style( 'proacto-footer-style', get_template_directory_uri() . '/css/footer.css', array(), _S_VERSION );
 
 
+		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/OwlCarousel2/dist/owl.carousel.min.js', array('jquery'), null, true);
 
 		wp_enqueue_script( 'proacto-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBvy3iyOo7jMS-RwdFyCZQAalM9xrA7KzI&callback=initMap&region=UA&language=uk', array(), _S_VERSION, true );
 
