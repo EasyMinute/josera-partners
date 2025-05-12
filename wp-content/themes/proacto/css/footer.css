@@ -13,7 +13,10 @@
     padding-bottom: 25px;
     position: relative;
 }
-
+.widget_josera_list_widget {
+    display: flex;
+    flex-direction: column;
+}
 .service-title {
     color: #2b2b2b;
     font-size: 39px;
@@ -28,7 +31,7 @@
 }
 .service-list {
     padding-bottom: 15px;
-    min-height: 140px;
+    min-height: 180px;
 }
 .service-list li {
     margin-bottom: 15px;
@@ -70,9 +73,17 @@
     padding-top: 20px;
 }
 .payment-delivery-logos {
-    align-items: center;
-    display: flex;
-    height: 65px;
+    font-size: 17px;
+    line-height: 20px;
+    color: #2b2b2b;
+    font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
+.payment-delivery-logos img {
+    height: 50px;
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
 }
 .payment-delivery-logos:not(:first-child) img {
     margin-left: 20px;
@@ -135,7 +146,8 @@
     }
 }
 .footer-widget-col .widgettitle {
-    font-size: 32px;    
+    font-size: 28px;
+    text-transform: uppercase;
     font-weight: 100;
     color: #2b2b2b;
     line-height: 1;
@@ -178,12 +190,13 @@
 }
 .contact-element:nth-child(1) a{
     font-weight: 500;
-    font-size: 25px;
+    font-size: 19px;
 }
 .contact-element a {
-    font-size: 17px;
-    font-weight: 300;
-    line-height: 25px;
+    font-family: Inter,sans-serif !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
 }
 .contact-element__additional {
     font-size: 13px;
@@ -204,7 +217,7 @@
 }
 .footer-bottom ul li+li:before {
     color: #2b2b2b;
-    content: '\00B7';
+    content: '  ';
     display: inline-block;
     text-align: center;
     width: 17px;    

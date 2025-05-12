@@ -9,6 +9,10 @@
 		wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/assets/OwlCarousel2/dist/assets/owl.carousel.css');
 		wp_enqueue_style('owl-theme', get_template_directory_uri() . '/assets/OwlCarousel2/dist/assets/owl.theme.default.css');
 
+		wp_enqueue_style( 'select2-css', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css' );
+
+
+
 
 
 
@@ -18,6 +22,8 @@
 
 		wp_enqueue_style( 'proacto-footer-style', get_template_directory_uri() . '/css/footer.css', array(), _S_VERSION );
 
+
+		wp_enqueue_script( 'select2-js', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js', array( 'jquery' ), null, true );
 
 		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/OwlCarousel2/dist/owl.carousel.min.js', array('jquery'), null, true);
 

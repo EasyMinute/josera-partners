@@ -240,6 +240,13 @@ $('#cities-filter').on('change', function(){
 
 });
 
+jQuery(document).ready(function($) {
+    $('.map__filter select').select2({
+        minimumResultsForSearch: Infinity,
+        width: '200px',
+    });
+});
+
 
 
 
